@@ -1,0 +1,10 @@
+Package: see
+Version: %%VERSION%%
+Architecture: amd64
+Depends: 
+Section: misc
+Priority: optional
+Maintainer: Zvonimir Bužanić <zvonimir.buzanic@asseco-see.hr>
+Description: Live see library.
+ Live see library built from https://www.adaptive-enterprises.com/~d/software/see/
+ 
