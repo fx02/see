@@ -1,0 +1,51 @@
+
+Things to do
+
+* Implement ES3.1 (ECMA-262-5)
+* bytecode JIT compiler
+        Ideas: GNU lightning (pseudo-RISC to native insn assembler)
+               LLVM (has a JIT module but is all in C++)
+               DotGNU's libJIT (looks very promising)
+* add some optimization to the code generator
+
+* fix my bytecode spec so that exceptions and break actually work [done]
+* split parse.c up into the three parts of the grammar [done]
+* switch from executable AST to compact bytecode [done]
+* add an argument converter, eg
+	SEE_argconv(interp, argc, argv, "ofi|sa*b",
+	   &obj, &floatv, &intv, &stringv, 
+	   &asciibuf, sizeof asciibuf, &boolchar); [done]
+  and maybe a corresponding call:
+	SEE_callv(interp, callableobj, "ofisab-",
+	    obj, float, int, see_string, asciiptr, boolchar); [done]
+* Get rid of EXT1 and replace with real JavaScript version compat [done]
+
+ES262-5
+   - http://www.ecma-international.org/publications/files/drafts/tc39-2009-025.pdf
+   - http://markcaudill.com/index.php/2009/04/javascript-new-features-ecma5/
+ES262-3
+    some resources at: http://www.swtech.com/script/javascript/diff/
+    http://members.ozemail.com.au/~enigman/javascript/js_faq.html
+    http://web.archive.org/web/20011014100919/http://www.webcoder.com/reference/2/
+
+    JavaScript1.0->1.1 
+	http://wp.netscape.com/eng/mozilla/3.0/handbook/javascript/newfunc.htm
+		- new operators: typeof void
+		- new objects: Array Boolean Function Number
+		- new methods:
+			Array.join(separator)
+			Array.reverse()
+			Array.sort(comparefunc)
+			String.split([separator])
+			Object.valueOf()
+		- new properties:
+			?.constructor
+			?.prototype
+			Number.MAX_VALUE
+			Number.MIN_VALUE
+			Number.NaN
+			Number.NEGATIVE_INFINITY
+			Number.POSITIVE_INFINITY
+
+* Add more compat support for jscript
+    see http://wiki.ecmascript.org/doku.php?id=es3.1:es3.x_working_docs
